@@ -16,7 +16,7 @@ export default function SearchForm(props) {
 
   return (
      <form>
-        <label htmlFor="search">Search:</label>
+        <label htmlFor="search"><i class="fas fa-search"></i></label>
         <input id="search" name="search" type="text" placeholder="Search" onChange={handleChange} value={searchTerm}/>
       </form>
   );
