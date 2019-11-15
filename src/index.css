@@ -7,15 +7,45 @@
 }
 
 body {
-  background: #222233;
+  background-image: url("background.png");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 main {
-  width: 85vw;
-  min-height: 80vh;
-  max-width: 1024px;
-  margin: 35px auto;
-  background: #fff;
-  padding: 15px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  width: 1024px;
+  margin: 0 auto;
+  margin-top: 20rem;
+}
+
+main h1 {
+  color: whitesmoke;
+  font-size: 6rem;
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px #17a2b8;
+}
+
+main h2 {
+  color: whitesmoke;
+  font-size: 3rem;
+  font-family: 'Bangers', cursive;
+  text-shadow: 4px 4px #17a2b8;
+}
+
+main form input {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.card {
+  height: 20rem;
+  width: 20rem;
+  margin-top: 3rem;
+}
+
+.card:last-child {
+  margin-bottom: 6rem;
 }

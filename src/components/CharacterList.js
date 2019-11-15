@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {Card, CardText, CardBody, CardTitle, Button} from 'reactstrap';
+import SearchForm from './SearchForm';
 
 export default function CharacterList() {
   const [characters, setCharacters] = useState([]);
@@ -15,19 +17,25 @@ export default function CharacterList() {
       })
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+    // tried to add dependency but it started looping?
   }, []);
 
   return (
     <>
-      <Link to='/'><button>Back Home</button></Link>
-      <section className="character-list">
+      <Link to='/'><Button color='info'>Back Home</Button>{' '}</Link>
+      
+      <SearchForm characters={characters} setCharacters={setCharacters}/>
+      
+      <section className="card-container">
         {characters.map((iteration, index) => (
-          <div key={index}>
-            <h2>{iteration.name}</h2>
-            <p>{iteration.status}</p>
-            <p>{iteration.species}</p>
-            <p>{iteration.type}</p>
-          </div>
+          <Card className='card' key={index}>
+            <CardBody>
+              <CardTitle><h3>{iteration.name}</h3></CardTitle>
+              <CardText>Status: {iteration.status}</CardText>
+              <CardText>Species: {iteration.species}</CardText>
+              <CardText>Type: {iteration.type}</CardText>
+            </CardBody>
+          </Card>
         ))}
       </section>
     </>
