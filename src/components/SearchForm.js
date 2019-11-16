@@ -8,6 +8,7 @@ export default function SearchForm(props) {
       character.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     props.setCharacters(results);
+    console.log(results);
   }, [searchTerm]);
 
   const handleChange = event => {
@@ -17,7 +18,7 @@ export default function SearchForm(props) {
   return (
      <form>
         <label htmlFor="search"><i class="fas fa-search"></i></label>
-        <input id="search" name="search" type="text" placeholder="Search" onChange={handleChange} value={searchTerm}/>
+        <input id="search" name="search" type="text" placeholder="Search" onChange={handleChange} value={searchTerm} autoComplete='off'/>
       </form>
   );
 }
